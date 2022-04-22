@@ -26,5 +26,17 @@ public class Main {
         System.out.println(mom.getName() + " " + mom.getSurname() +
                 " отметила днюху и ее данные слегка изменились: \n" + mom);
 
+        try {
+            new PersonBuilder().build();
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            new PersonBuilder().setAge(-100).build();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+
     }
 }
